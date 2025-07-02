@@ -4076,6 +4076,7 @@ MonoBehaviour:
   nicknameInput: {fileID: 478396814}
   hostButton: {fileID: 1483332768}
   clientButton: {fileID: 1913800791}
+  leaveGame: {fileID: 232221702}
   startGameButton: {fileID: 1207270772}
   leaveLobbyButton: {fileID: 301867598}
   statusText: {fileID: 226841587}

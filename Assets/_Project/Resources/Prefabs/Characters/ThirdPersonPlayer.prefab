@@ -581,7 +581,7 @@ MonoBehaviour:
   groundCheck: {fileID: 5049699317215424651}
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1984
   playerCamera: {fileID: 0}
   wandRoot: {fileID: 4927843795312036664}
   aimLayerMask:

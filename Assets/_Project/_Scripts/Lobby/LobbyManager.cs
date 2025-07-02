@@ -24,6 +24,7 @@ namespace SimpleMP
         [Space, Header("Buttons")]
         public Button hostButton;
         public Button clientButton;
+        public Button leaveGame;
         public Button startGameButton;
         public Button leaveLobbyButton;
 
@@ -53,6 +54,7 @@ namespace SimpleMP
             clientButton.onClick.AddListener(OnClientClicked);
             startGameButton.onClick.AddListener(OnStartGameClicked);
             leaveLobbyButton.onClick.AddListener(OnLeaveLobbyClicked);
+            leaveGame.onClick.AddListener(OnLeaveGameClicked);
 
             startGameButton.gameObject.SetActive(false); // Hide until hosting
             statusText.text = "Choose Host or Client...";
@@ -108,6 +110,11 @@ namespace SimpleMP
             lobbyUI.SetActive(true);
 
             startGameButton.gameObject.SetActive(false);
+        }
+
+        void OnLeaveGameClicked()
+        {
+            Application.Quit();
         }
 
         void OnStartGameClicked()
