@@ -39,6 +39,7 @@ namespace SimpleMP.Characters
         [SerializeField] private float jumpHeight = 6f;
         [SerializeField] private Transform groundCheck;
         [SerializeField] private LayerMask ground;
+        [SerializeField] private bool isGrounded;
         #endregion
 
         #region Combat Vars
@@ -99,7 +100,7 @@ namespace SimpleMP.Characters
 
         #region Private Variables (hidden)
         private float velocityY;
-        private bool isGrounded;
+        
 
         private float cameraCap;
         private Vector2 currentMouseDelta;
@@ -300,7 +301,10 @@ namespace SimpleMP.Characters
             targetDir.Normalize();
 
             if (isGrounded && Input.GetButtonDown("Jump"))
+            {
                 UpdateJumpVelocityServerRpc(Mathf.Sqrt(jumpHeight * -2f * gravity));
+                isGrounded = false;
+            }
 
             if (!isGrounded && controller.velocity.y < -1f)
                 UpdateJumpVelocityServerRpc(-8f);
